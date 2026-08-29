@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions - AutoWallX</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #FFFFFF;
+        color: #334155; /* slate-700 */
+      }
+      .prose h2 {
+        color: #0F172A; /* slate-900 */
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #E2E8F0;
+        padding-bottom: 0.5rem;
+      }
+      .prose p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+      }
+      .prose ul {
+        list-style-type: disc;
+        padding-left: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+      .prose li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+      .prose strong {
+        color: #0F172A;
+      }
+    </style>
+  </head>
+  <body class="selection:bg-indigo-100 overflow-x-hidden flex flex-col min-h-screen">
+
+    <!-- Top Header with Navigation Links -->
+    <header class="border-b border-slate-100 bg-white sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="https://autowallx.in/home" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <span class="text-2xl font-black tracking-tight text-slate-900">AutoWallX</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+          <a href="https://autowallx.in/home" class="hover:text-indigo-600 transition-colors">Home</a>
+          <a href="https://autowallx.in/about" class="hover:text-indigo-600 transition-colors">About Us</a>
+          <a href="https://autowallx.in/privacy-policy" class="hover:text-indigo-600 transition-colors">Privacy Policy</a>
+          <a href="https://autowallx.in/terms-conditions" class="text-indigo-600 transition-colors">Terms & Conditions</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-12 pb-24 px-6">
+      <div class="max-w-3xl mx-auto">
+        
+        <!-- Header Section -->
+        <div class="mb-12">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+            Terms & Conditions
+          </h1>
+          <p class="text-sm font-medium text-slate-400 bg-slate-50 inline-block px-3 py-1 rounded-full border border-slate-100">
+            Last Updated: August 27, 2026
+          </p>
+        </div>
+
+        <!-- Terms & Conditions Content -->
+        <div class="prose max-w-none text-slate-600 text-base md:text-lg">
+          <p>
+            Please read these Terms & Conditions carefully before using the AutoWallX application.
+          </p>
+
+          <h2>1. Acceptance of Terms</h2>
+          <p>
+            By downloading, installing, or using AutoWallX, you agree to be bound by these Terms & Conditions. If you do not agree, please do not use the application.
+          </p>
+
+          <h2>2. Description of Service</h2>
+          <p>AutoWallX is a personalization platform that provides:</p>
+          <ul>
+            <li>High-quality (4K/HD) wallpaper browsing and previews.</li>
+            <li>Automatic Wallpaper changing functionality (Auto Wallpaper).</li>
+            <li>"Smart Reminders" via notifications for fresh content.</li>
+            <li>User accounts for syncing favorites and preferences.</li>
+            <li>Direct downloads and gallery saving options.</li>
+          </ul>
+
+          <h2>3. Content & Intellectual Property</h2>
+          <ul>
+            <li><strong>Wallpaper Content:</strong> Wallpapers are sourced from various providers. All copyrights belong to their respective owners. AutoWallX does not claim ownership of third-party content.</li>
+            <li><strong>Usage:</strong> Wallpapers are for personal, non-commercial use only. Users must not redistribute, resell, or exploit content without proper authorization from the rights holders.</li>
+            <li><strong>App Assets:</strong> The "AutoWallX" name, UI design, custom icons, and code are the exclusive property of the developers.</li>
+          </ul>
+
+          <h2>4. Auto Wallpaper & Technical Limitations</h2>
+          <ul>
+            <li>The Auto Wallpaper feature depends on Android system permissions, battery optimization settings, and manufacturer-specific OS restrictions.</li>
+            <li>While we use advanced scheduling (WorkManager), we cannot guarantee that wallpaper changes will occur at the exact millisecond requested if the system restricts background tasks.</li>
+          </ul>
+
+          <h2>5. User Accounts & Data</h2>
+          <ul>
+            <li><strong>Authentication:</strong> We use Firebase Authentication for secure login. Users are responsible for maintaining the confidentiality of their account credentials.</li>
+            <li><strong>Favorites Sync:</strong> Favorites are stored using a combination of local Room Database and cloud services to ensure availability.</li>
+            <li><strong>Data Deletion:</strong> Users can request account and data deletion by contacting us at <a href="mailto:autowallx@gmail.com" class="text-indigo-600 hover:underline">autowallx@gmail.com</a>.</li>
+          </ul>
+
+          <h2>6. Third-Party Services</h2>
+          <p>AutoWallX integrates the following services to function:</p>
+          <ul>
+            <li><strong>Supabase & Cloudflare:</strong> For high-speed wallpaper metadata and image delivery.</li>
+            <li><strong>Firebase:</strong> For authentication, analytics, and app stability.</li>
+            <li><strong>Google AdMob:</strong> To display advertisements. By using the app, you acknowledge that these providers may process data (like Device IDs) according to their own privacy policies.</li>
+          </ul>
+
+          <h2>7. Advertisements</h2>
+          <ul>
+            <li>The app displays Native and Interstitial ads to keep the service free.</li>
+            <li>Ad frequency is optimized based on user interactions (e.g., after viewing a certain number of wallpapers).</li>
+          </ul>
+
+          <h2>8. Permissions</h2>
+          <p>To provide a full experience, the app requests:</p>
+          <ul>
+            <li><strong>Storage/Media Access:</strong> To save and set wallpapers.</li>
+            <li><strong>Notifications:</strong> For "Smart Reminders" and Auto Wallpaper status updates.</li>
+          </ul>
+          <p>Users can revoke these at any time via System Settings, though some features may stop working.</p>
+
+          <h2>9. Acceptable Use</h2>
+          <p>Users agree not to:</p>
+          <ul>
+            <li>Attempt to "scrape" or mass-download the wallpaper database.</li>
+            <li>Reverse engineer the application.</li>
+            <li>Use the app for any unlawful activity.</li>
+          </ul>
+
+          <h2>10. Limitation of Liability</h2>
+          <p>
+            AutoWallX and its developers are not liable for any damages resulting from the use or inability to use the app, including but not limited to device performance issues, network data costs, or third-party service interruptions.
+          </p>
+
+          <h2>11. Changes to Terms</h2>
+          <p>
+            We reserve the right to update these terms to reflect new features or legal requirements. Continued use of the app constitutes acceptance of the revised terms.
+          </p>
+
+          <h2>12. Contact Us</h2>
+          <p>For any queries regarding these terms, copyright issues, or technical support:</p>
+          <p><strong>Email:</strong> <a href="mailto:autowallx@gmail.com" class="text-indigo-600 font-medium hover:underline">autowallx@gmail.com</a></p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 pt-16 pb-10 px-6 mt-auto">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          
+          <!-- Brand Column -->
+          <div class="flex flex-col gap-4">
+            <span class="text-2xl font-black tracking-tight text-slate-900">AutoWallX</span>
+            <p class="text-sm text-slate-500 max-w-xs leading-relaxed">Experience stunning 4K wallpapers that change automatically. Hand-curated collections designed for your Android device.</p>
+          </div>
+
+          <!-- Links Column -->
+          <div class="flex flex-col gap-4">
+            <h4 class="font-bold text-slate-900 uppercase tracking-wider text-xs">Company</h4>
+            <a href="https://autowallx.in/about" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">About Us</a>
+            <a href="https://autowallx.in/privacy-policy" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">Privacy Policy</a>
+            <a href="https://autowallx.in/terms-conditions" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">Terms & Conditions</a>
+          </div>
+
+          <!-- Get in Touch Column -->
+          <div class="flex flex-col gap-4">
+            <h4 class="font-bold text-slate-900 uppercase tracking-wider text-xs">Get in Touch</h4>
+            <a href="mailto:autowallx@gmail.com" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-3">
+              autowallx@gmail.com
+            </a>
+            <a href="https://www.instagram.com/autowallx" target="_blank" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-3">
+              Instagram
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-bold tracking-wide">
+          <p>© 2026 AUTOWALLX. DESIGNED FOR PERFORMANCE.</p>
+          <p>ANDROID IS A TRADEMARK OF GOOGLE LLC.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
