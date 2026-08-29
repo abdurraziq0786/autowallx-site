@@ -1,143 +1,142 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - AutoWallX</title>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Manrope:wght@800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #FFFFFF;
-        color: #334155;
-      }
-      .prose h2 {
-        color: #0F172A;
-        font-weight: 700;
-        font-size: 1.5rem;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #E2E8F0;
-        padding-bottom: 0.5rem;
-      }
-      .prose p {
-        margin-bottom: 1rem;
-        line-height: 1.75;
-      }
-      .prose strong {
-        color: #0F172A;
-      }
+        body { font-family: 'Inter', sans-serif; background-color: #0B0F1A; color: #F8FAFC; overflow-x: hidden; }
+        .font-heading { font-family: 'Manrope', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .accent-gradient { background: linear-gradient(135deg, #6366F1 0%, #A855F7 100%); }
+        .dot-pattern { background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 24px 24px; }
+        .content-overlay { position: relative; z-index: 10; }
+        
+        /* Prose Styles for Sub-pages */
+        .prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.875rem; color: #fff; margin-top: 3rem; margin-bottom: 1.25rem; }
+        .prose p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.5rem; }
+        .prose strong { color: #818cf8; font-weight: 700; }
+        .prose a { color: #6366f1; text-decoration: underline; transition: color 0.2s; }
+        .prose a:hover { color: #818cf8; }
     </style>
-  </head>
-  <body class="selection:bg-indigo-100 overflow-x-hidden flex flex-col min-h-screen">
+</head>
+<body class="dot-pattern flex flex-col min-h-screen">
 
-    <!-- Top Header with Navigation Links -->
-    <header class="border-b border-slate-100 bg-white sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="https://autowallx.in/home" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <span class="text-2xl font-black tracking-tight text-slate-900">AutoWallX</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
-          <a href="https://autowallx.in/home" class="hover:text-indigo-600 transition-colors">Home</a>
-          <a href="https://autowallx.in/about" class="text-indigo-600 transition-colors">About Us</a>
-          <a href="https://autowallx.in/privacy-policy" class="hover:text-indigo-600 transition-colors">Privacy Policy</a>
-          <a href="https://autowallx.in/terms-conditions" class="hover:text-indigo-600 transition-colors">Terms & Conditions</a>
-        </nav>
-      </div>
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-[100] glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="https://autowallx.in" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="text-2xl font-heading font-black tracking-tight text-white text-shadow-lg">AutoWallX</span>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="https://autowallx.in" class="hover:text-white transition-colors">Home</a>
+                <a href="https://autowallx.in/about" class="text-white transition-colors">About Us</a>
+                <a href="https://autowallx.in/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://autowallx.in/terms-conditions" class="hover:text-white transition-colors">Terms & Conditions</a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-4 top-20 bg-slate-950 border border-white/10 rounded-[2rem] shadow-2xl z-[90] flex flex-col p-6 space-y-2 overflow-hidden">
+            <a href="https://autowallx.in" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">Home</a>
+            <a href="https://autowallx.in/about" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">About Us</a>
+            <a href="https://autowallx.in/privacy-policy" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">Privacy Policy</a>
+            <a href="https://autowallx.in/terms-conditions" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">Terms & Conditions</a>
+            <div class="pt-4"><a href="https://play.google.com/store/apps/details?id=com.autowallx.wallpapers" class="w-full inline-block text-center px-6 py-4 accent-gradient text-white rounded-xl font-bold text-sm">Download App</a></div>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-12 pb-24 px-6">
-      <div class="max-w-3xl mx-auto">
-        
-        <!-- Header Section -->
-        <div class="mb-12">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
-            About Us
-          </h1>
-          <p class="text-sm font-medium text-slate-400 bg-slate-50 inline-block px-3 py-1 rounded-full border border-slate-100">
-            Discover AutoWallX
-          </p>
+    <main class="flex-grow pt-40 pb-24 px-6 content-overlay">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Page Heading -->
+            <div class="mb-16 text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl font-heading font-black leading-tight tracking-tighter mb-6">
+                    About <span class="text-indigo-500">Us</span>
+                </h1>
+                <div class="h-1 w-20 bg-indigo-500 rounded-full mx-auto md:mx-0"></div>
+            </div>
+
+            <!-- Content Card -->
+            <div class="glass p-8 md:p-16 rounded-[3rem] border-white/5 prose max-w-none">
+                <p class="text-xl italic mb-8 border-l-4 border-indigo-500 pl-6">
+                    Welcome to <strong>AutoWallX</strong>, your ultimate destination for high-definition 4K wallpapers and intelligent automated screen customization for Android devices.
+                </p>
+
+                <h2>Our Mission</h2>
+                <p>
+                    We believe your smartphone screen should always feel fresh, vibrant, and personalized. Our goal is to provide a seamless platform where you can discover hand-curated artwork and effortlessly schedule automatic wallpaper updates without draining your mobile data or battery.
+                </p>
+
+                <h2>Why Choose AutoWallX?</h2>
+                <p>
+                    <strong>Lightning Fast Performance:</strong> We optimize every image using high-speed thumbnail caching so you can browse smoothly.
+                </p>
+                <p>
+                    <strong>Auto Changer:</strong> Set your favorite collections and let the app refresh your home and lock screens automatically.
+                </p>
+                <p>
+                    <strong>Cloud Sync:</strong> Securely sign in to keep your favorite wallpapers synced across all your devices using robust cloud infrastructure.
+                </p>
+
+                <h2>Contact Us</h2>
+                <p>
+                    Have feedback, questions, or suggestions? Reach out anytime at <a href="mailto:autowallx@gmail.com">autowallx@gmail.com</a>.
+                </p>
+            </div>
+
         </div>
-
-        <!-- About Us Content -->
-        <div class="prose max-w-none text-slate-600 text-base md:text-lg">
-          <p>
-            Welcome to <strong>AutoWallX</strong>, your ultimate destination for high-definition 4K wallpapers and intelligent automated screen customization for Android devices.
-          </p>
-
-          <h2>Our Mission</h2>
-          <p>
-            We believe your smartphone screen should always feel fresh, vibrant, and personalized. Our goal is to provide a seamless platform where you can discover hand-curated artwork and effortlessly schedule automatic wallpaper updates without draining your mobile data or battery.
-          </p>
-
-          <h2>Why Choose AutoWallX?</h2>
-          <p>
-            <strong>Lightning Fast Performance:</strong> We optimize every image using high-speed thumbnail caching so you can browse smoothly.
-          </p>
-          <p>
-            <strong>Auto Changer:</strong> Set your favorite collections and let the app refresh your home and lock screens automatically.
-          </p>
-          <p>
-            <strong>Cloud Sync:</strong> Securely sign in to keep your favorite wallpapers synced across all your devices using robust cloud infrastructure.
-          </p>
-
-          <h2>Contact Us</h2>
-          <p>
-            Have feedback, questions, or suggestions? Reach out anytime at <a href="mailto:autowallx@gmail.com" class="text-indigo-600 font-medium hover:underline">autowallx@gmail.com</a>.
-          </p>
-        </div>
-
-      </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-100 pt-16 pb-10 px-6 mt-auto">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          
-          <!-- Brand Column -->
-          <div class="flex flex-col gap-4">
-            <span class="text-2xl font-black tracking-tight text-slate-900">AutoWallX</span>
-            <p class="text-sm text-slate-500 max-w-xs leading-relaxed">Experience stunning 4K wallpapers that change automatically. Hand-curated collections designed for your Android device.</p>
-          </div>
-
-          <!-- Links Column -->
-          <div class="flex flex-col gap-4">
-            <h4 class="font-bold text-slate-900 uppercase tracking-wider text-xs">Company</h4>
-            <a href="https://autowallx.in/about" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">About Us</a>
-            <a href="https://autowallx.in/privacy-policy" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">Privacy Policy</a>
-            <a href="https://autowallx.in/terms-conditions" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">Terms & Conditions</a>
-          </div>
-
-          <!-- Get in Touch Column -->
-          <div class="flex flex-col gap-4">
-            <h4 class="font-bold text-slate-900 uppercase tracking-wider text-xs">Get in Touch</h4>
-            <a href="mailto:autowallx@gmail.com" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-3">
-              autowallx@gmail.com
-            </a>
-            <a href="https://www.instagram.com/autowallx" target="_blank" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-3">
-              Instagram
-            </a>
-          </div>
-
+    <footer class="py-16 px-6 border-t border-white/5 mt-auto content-overlay glass">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <a href="https://autowallx.in" class="text-2xl font-heading font-black">AutoWallX</a>
+                <p class="text-[10px] text-slate-600 tracking-[0.3em] uppercase mt-2">Premium Android Personalization</p>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center gap-8 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                <a href="https://autowallx.in/about" class="text-white transition-all">About</a>
+                <a href="https://autowallx.in/privacy-policy" class="hover:text-white transition-all">Privacy</a>
+                <a href="https://autowallx.in/terms-conditions" class="hover:text-white transition-all">Terms</a>
+                <a href="mailto:autowallx@gmail.com" class="hover:text-white transition-all">Support</a>
+            </nav>
+            
+            <div class="text-[10px] text-slate-800 font-bold tracking-widest uppercase">© 2026 AUTOWALLX. ALL RIGHTS RESERVED.</div>
         </div>
-
-        <!-- Copyright -->
-        <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-bold tracking-wide">
-          <p>© 2026 AUTOWALLX. DESIGNED FOR PERFORMANCE.</p>
-          <p>ANDROID IS A TRADEMARK OF GOOGLE LLC.</p>
-        </div>
-      </div>
     </footer>
 
-  </body>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
 </html>
