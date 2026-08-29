@@ -1,184 +1,160 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy - AutoWallX</title>
+    <title>Privacy Policy - AutoWallX | Protecting Your Data</title>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Manrope:wght@800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #FFFFFF;
-        color: #334155;
-      }
-      .prose h2 {
-        color: #0F172A;
-        font-weight: 700;
-        font-size: 1.5rem;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #E2E8F0;
-        padding-bottom: 0.5rem;
-      }
-      .prose p {
-        margin-bottom: 1rem;
-        line-height: 1.75;
-      }
-      .prose ul {
-        list-style-type: disc;
-        padding-left: 1.25rem;
-        margin-bottom: 1.5rem;
-      }
-      .prose li {
-        margin-bottom: 0.5rem;
-        line-height: 1.6;
-      }
-      .prose strong {
-        color: #0F172A;
-      }
+        body { font-family: 'Inter', sans-serif; background-color: #0B0F1A; color: #F8FAFC; overflow-x: hidden; }
+        .font-heading { font-family: 'Manrope', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .accent-gradient { background: linear-gradient(135deg, #6366F1 0%, #A855F7 100%); }
+        .dot-pattern { background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 24px 24px; }
+        .content-overlay { position: relative; z-index: 10; }
+        
+        .prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.875rem; color: #fff; margin-top: 3.5rem; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem; }
+        .prose p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.5rem; }
+        .prose strong { color: #818cf8; font-weight: 700; }
+        .prose ul { list-style: none; padding: 0; margin-bottom: 2rem; }
+        .prose li { display: flex; gap: 1rem; color: #94a3b8; margin-bottom: 1rem; }
+        .prose li::before { content: "•"; color: #6366f1; font-weight: bold; }
+        .prose a { color: #6366f1; text-decoration: underline; transition: color 0.2s; }
+        .prose a:hover { color: #818cf8; }
     </style>
-  </head>
-  <body class="selection:bg-indigo-100 overflow-x-hidden flex flex-col min-h-screen">
+</head>
+<body class="dot-pattern flex flex-col min-h-screen">
 
-    <!-- Top Header with Navigation Links -->
-    <header class="border-b border-slate-100 bg-white sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="https://autowallx.in/home" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <span class="text-2xl font-black tracking-tight text-slate-900">AutoWallX</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
-          <a href="https://autowallx.in/home" class="hover:text-indigo-600 transition-colors">Home</a>
-          <a href="https://autowallx.in/about" class="hover:text-indigo-600 transition-colors">About Us</a>
-          <a href="https://autowallx.in/privacy-policy" class="text-indigo-600 transition-colors">Privacy Policy</a>
-          <a href="https://autowallx.in/terms-conditions" class="hover:text-indigo-600 transition-colors">Terms & Conditions</a>
-        </nav>
-      </div>
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-[100] glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="https://autowallx.in" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="text-2xl font-heading font-black tracking-tight text-white text-shadow-lg">AutoWallX</span>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="https://autowallx.in" class="hover:text-white transition-colors">Home</a>
+                <a href="https://autowallx.in/about" class="hover:text-white transition-colors">About Us</a>
+                <a href="https://autowallx.in/privacy-policy" class="text-white border-b-2 border-indigo-500 pb-1">Privacy Policy</a>
+                <a href="https://autowallx.in/terms-conditions" class="hover:text-white transition-colors">Terms & Conditions</a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-4 top-20 bg-slate-950 border border-white/10 rounded-[2rem] shadow-2xl z-[90] flex flex-col p-6 space-y-2 overflow-hidden">
+            <a href="https://autowallx.in" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">Home</a>
+            <a href="https://autowallx.in/about" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">About Us</a>
+            <a href="https://autowallx.in/privacy-policy" class="text-lg font-bold text-white px-4 py-3 bg-white/5 rounded-xl transition-all">Privacy Policy</a>
+            <a href="https://autowallx.in/terms-conditions" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">Terms & Conditions</a>
+            <div class="pt-4"><a href="https://play.google.com/store/apps/details?id=com.autowallx.wallpapers" class="w-full inline-block text-center px-6 py-4 accent-gradient text-white rounded-xl font-bold text-sm">Download App</a></div>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-12 pb-24 px-6">
-      <div class="max-w-3xl mx-auto">
-        
-        <!-- Header Section -->
-        <div class="mb-12">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
-            Privacy Policy
-          </h1>
-          <p class="text-sm font-medium text-slate-400 bg-slate-50 inline-block px-3 py-1 rounded-full border border-slate-100">
-            Last Updated: August 27, 2026
-          </p>
+    <main class="flex-grow pt-40 pb-24 px-6 content-overlay">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Page Heading -->
+            <div class="mb-16 text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl font-heading font-black leading-tight tracking-tighter mb-4 text-white">
+                    Privacy <span class="text-indigo-500">Policy</span>
+                </h1>
+                <p class="text-sm font-bold text-slate-500 tracking-widest uppercase">Last Updated: August 27, 2026</p>
+            </div>
+
+            <!-- Content Card -->
+            <div class="glass p-8 md:p-16 rounded-[3rem] border-white/5 prose max-w-none">
+                <p class="text-xl">
+                    <strong>AutoWallX</strong> ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.
+                </p>
+
+                <h2>1. Information We Collect</h2>
+                <p>We only collect information that is necessary to provide the core services of AutoWallX:</p>
+                <ul>
+                    <li><strong>Account Information:</strong> If you sign in via Firebase, we store your email address to sync your favorite wallpapers across devices.</li>
+                    <li><strong>Interaction Data:</strong> We track which categories you interact with to personalize your experience (e.g., category-based shuffling).</li>
+                    <li><strong>Device Information:</strong> General info like Android version and device model for app performance monitoring and bug reporting.</li>
+                </ul>
+
+                <h2>2. Wallpapers and Data Usage Optimization</h2>
+                <ul>
+                    <li><strong>Thumbnail Usage:</strong> To save your mobile data and provide a fast experience, we load low-resolution versions for browsing.</li>
+                    <li><strong>High-Resolution Content:</strong> Full-quality images are only accessed when you explicitly view, download, or set a wallpaper.</li>
+                    <li><strong>No Personal Media Access:</strong> AutoWallX does NOT access, read, or upload your personal photos, videos, or files from your device.</li>
+                </ul>
+
+                <h2>3. Device Permissions</h2>
+                <p>We request permissions only when required by a specific feature:</p>
+                <ul>
+                    <li><strong>Media/Storage:</strong> To save high-quality wallpapers to your device's Gallery.</li>
+                    <li><strong>Notifications:</strong> To provide content updates and service status.</li>
+                </ul>
+
+                <h2>4. Third-Party Services</h2>
+                <ul>
+                    <li><strong>Firebase:</strong> Used for secure Authentication and Crash Reporting.</li>
+                    <li><strong>Supabase & Cloudflare:</strong> Used to securely deliver wallpaper metadata at high speeds.</li>
+                    <li><strong>Google AdMob:</strong> Used to display advertisements. AdMob may collect device-specific IDs for relevant ads.</li>
+                </ul>
+
+                <h2>5. Data Security & Retention</h2>
+                <p>We use industry-standard security measures to protect your data. You can delete your account and associated favorites at any time by contacting us at <strong>autowallx@gmail.com</strong>. Requests are processed within 48 hours.</p>
+
+                <h2>6. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or your data, please reach out:</p>
+                <p><strong>Email:</strong> <a href="mailto:autowallx@gmail.com">autowallx@gmail.com</a></p>
+            </div>
+
         </div>
-
-        <!-- Privacy Policy Content -->
-        <div class="prose max-w-none text-slate-600 text-base md:text-lg">
-          <p>
-            <strong>AutoWallX</strong> ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.
-          </p>
-
-          <h2>1. Information We Collect</h2>
-          <p>We only collect information that is necessary to provide the core services of AutoWallX:</p>
-          <ul>
-            <li><strong>Account Information:</strong> If you sign in via Firebase, we store your email address to sync your favorite wallpapers across devices.</li>
-            <li><strong>Interaction Data:</strong> We track which categories you interact with to personalize your experience (e.g., category-based shuffling).</li>
-            <li><strong>Device Information:</strong> General info like Android version and device model for app performance monitoring and bug reporting (via Firebase Analytics).</li>
-          </ul>
-
-          <h2>2. Wallpapers and Data Usage Optimization</h2>
-          <ul>
-            <li><strong>Thumbnail Usage:</strong> To save your mobile data and provide a fast experience, we load low-resolution versions (thumbnail_url) for browsing.</li>
-            <li><strong>High-Resolution Content:</strong> Full-quality images (image_url) are only accessed when you explicitly view, download, or set a wallpaper.</li>
-            <li><strong>No Personal Media Access:</strong> AutoWallX does NOT access, read, or upload your personal photos, videos, or files from your device.</li>
-          </ul>
-
-          <h2>3. Device Permissions</h2>
-          <p>We request the following permissions only when required by a specific feature:</p>
-          <ul>
-            <li><strong>Media/Storage:</strong> To save high-quality wallpapers to your device's Gallery.</li>
-            <li><strong>Notifications:</strong> To provide "Smart Reminders" for new content and status updates for the "Auto Wallpaper" service.</li>
-          </ul>
-          <p>You can manage or revoke these permissions at any time through your Android device settings.</p>
-
-          <h2>4. Third-Party Services</h2>
-          <p>We use trusted third-party providers to maintain the app's infrastructure and provide high-quality services:</p>
-          <ul>
-            <li><strong>Firebase (by Google):</strong> Used for secure Authentication, Analytics, and Crash Reporting.</li>
-            <li><strong>Supabase & Cloudflare:</strong> Used to securely store and deliver wallpaper metadata and images at high speeds.</li>
-            <li><strong>Google AdMob:</strong> Used to display advertisements. AdMob may collect and use device-specific IDs to provide relevant ads.</li>
-          </ul>
-
-          <h2>5. Auto Wallpaper Feature</h2>
-          <p>Our "Auto Wallpaper" feature uses Android’s WorkManager API to schedule background changes. This feature operates entirely on-device based on the preferences you set within the app.</p>
-
-          <h2>6. Data Security</h2>
-          <p>We use industry-standard security measures (including encryption via Cloudflare and Firebase) to protect your account data. However, please remember that no method of transmission over the internet is 100% secure.</p>
-
-          <h2>7. Data Retention & Account Deletion</h2>
-          <ul>
-            <li>We keep your account data only as long as you have an active account.</li>
-            <li><strong>Account Deletion:</strong> You can delete your account and all associated favorites/data at any time. Simply contact us at <a href="mailto:autowallx@gmail.com" class="text-indigo-600 hover:underline">autowallx@gmail.com</a> with your request, and we will process it within 48 hours.</li>
-          </ul>
-
-          <h2>8. Children’s Privacy</h2>
-          <p>AutoWallX does not knowingly collect any personal information from children under the age of 13. If we become aware that a child has provided us with personal information, we will delete it immediately.</p>
-
-          <h2>9. Changes to This Policy</h2>
-          <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the application.</p>
-
-          <h2>10. Contact Us</h2>
-          <p>If you have any questions about this Privacy Policy or your data, please reach out:</p>
-          <p><strong>Email:</strong> <a href="mailto:autowallx@gmail.com" class="text-indigo-600 font-medium hover:underline">autowallx@gmail.com</a></p>
-        </div>
-
-      </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-100 pt-16 pb-10 px-6 mt-auto">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          
-          <!-- Brand Column -->
-          <div class="flex flex-col gap-4">
-            <span class="text-2xl font-black tracking-tight text-slate-900">AutoWallX</span>
-            <p class="text-sm text-slate-500 max-w-xs leading-relaxed">Experience stunning 4K wallpapers that change automatically. Hand-curated collections designed for your Android device.</p>
-          </div>
-
-          <!-- Links Column -->
-          <div class="flex flex-col gap-4">
-            <h4 class="font-bold text-slate-900 uppercase tracking-wider text-xs">Company</h4>
-            <a href="https://autowallx.in/about" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">About Us</a>
-            <a href="https://autowallx.in/privacy-policy" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">Privacy Policy</a>
-            <a href="https://autowallx.in/terms-conditions" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors">Terms & Conditions</a>
-          </div>
-
-          <!-- Get in Touch Column -->
-          <div class="flex flex-col gap-4">
-            <h4 class="font-bold text-slate-900 uppercase tracking-wider text-xs">Get in Touch</h4>
-            <a href="mailto:autowallx@gmail.com" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-3">
-              autowallx@gmail.com
-            </a>
-            <a href="https://www.instagram.com/autowallx" target="_blank" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-3">
-              Instagram
-            </a>
-          </div>
-
+    <footer class="py-16 px-6 border-t border-white/5 mt-auto content-overlay glass">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <a href="https://autowallx.in" class="text-2xl font-heading font-black">AutoWallX</a>
+                <p class="text-[10px] text-slate-600 tracking-[0.3em] uppercase mt-2">Premium Android Personalization</p>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center gap-8 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                <a href="https://autowallx.in" class="hover:text-white transition-all">Home</a>
+                <a href="https://autowallx.in/about" class="hover:text-white transition-all">About</a>
+                <a href="https://autowallx.in/privacy-policy" class="text-white transition-all">Privacy</a>
+                <a href="https://autowallx.in/terms-conditions" class="hover:text-white transition-all">Terms</a>
+                <a href="mailto:autowallx@gmail.com" class="hover:text-white transition-all">Support</a>
+            </nav>
+            
+            <div class="text-[10px] text-slate-800 font-bold tracking-widest uppercase">© 2026 AUTOWALLX. ALL RIGHTS RESERVED.</div>
         </div>
-
-        <!-- Copyright -->
-        <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-bold tracking-wide">
-          <p>© 2026 AUTOWALLX. DESIGNED FOR PERFORMANCE.</p>
-          <p>ANDROID IS A TRADEMARK OF GOOGLE LLC.</p>
-        </div>
-      </div>
     </footer>
 
-  </body>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
 </html>
