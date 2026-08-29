@@ -38,27 +38,60 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Mobile Mockup Design -->
     <main class="flex-grow">
-      <section class="py-20 md:py-32 px-6 bg-gradient-to-b from-slate-50/50 to-white text-center">
-        <div class="max-w-3xl mx-auto">
-          <span class="inline-block text-xs font-bold uppercase tracking-widest bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full mb-6">
-            Designed for Android
-          </span>
-          <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
-            Stunning 4K Wallpapers That Change <span class="text-indigo-600">Automatically</span>.
-          </h1>
-          <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Experience hand-curated collections, smart automated screen updates, and cloud-synced favorites with AutoWallX.
-          </p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#download" class="w-full sm:w-auto bg-slate-900 hover:bg-indigo-600 text-white font-semibold px-8 py-4 rounded-xl transition-colors shadow-lg shadow-slate-900/10">
-              Download App
-            </a>
-            <a href="https://autowallx.in/about" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-8 py-4 rounded-xl transition-colors">
-              Learn More
-            </a>
+      <section class="py-16 md:py-24 px-6 bg-gradient-to-b from-slate-50/50 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <!-- Left Text Content -->
+          <div class="text-center lg:text-left">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full mb-6">
+              Designed for Android
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+              Stunning 4K Wallpapers That Change <span class="text-indigo-600">Automatically</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Experience hand-curated collections, smart automated screen updates, and cloud-synced favorites with AutoWallX.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="#download" class="w-full sm:w-auto bg-slate-900 hover:bg-indigo-600 text-white font-semibold px-8 py-4 rounded-xl transition-colors shadow-lg shadow-slate-900/10 text-center">
+                Download App
+              </a>
+              <a href="https://autowallx.in/about" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-8 py-4 rounded-xl transition-colors text-center">
+                Learn More
+              </a>
+            </div>
           </div>
+
+          <!-- Right Mobile Mockup Design -->
+          <div class="relative flex justify-center items-center">
+            <div class="absolute w-72 h-72 bg-indigo-200 rounded-full filter blur-3xl opacity-30 -z-10"></div>
+            <div class="flex gap-4 items-center">
+              <!-- Mockup Phone 1 -->
+              <div class="w-64 h-[500px] bg-slate-900 rounded-[40px] p-3 shadow-2xl border-4 border-slate-800 transform -rotate-6 translate-y-6">
+                <div class="w-full h-full bg-gradient-to-br from-indigo-900 to-slate-900 rounded-[32px] overflow-hidden flex flex-col justify-between p-4 relative">
+                  <div class="absolute top-3 left-1/2 transform -translate-x-1/2 w-20 h-4 bg-black rounded-full"></div>
+                  <div class="mt-8 text-center text-white/80 text-xs font-medium">AutoWallX 4K</div>
+                  <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-white text-center">
+                    <p class="text-xs font-bold">Auto Wallpaper Active</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Mockup Phone 2 (Center Primary) -->
+              <div class="w-72 h-[540px] bg-slate-900 rounded-[44px] p-3 shadow-2xl border-4 border-slate-800 z-10">
+                <div class="w-full h-full bg-gradient-to-br from-indigo-600 to-purple-800 rounded-[36px] overflow-hidden flex flex-col justify-between p-5 relative">
+                  <div class="absolute top-3 left-1/2 transform -translate-x-1/2 w-24 h-4 bg-black rounded-full"></div>
+                  <div class="mt-8 text-center text-white text-sm font-bold">Explore Collections</div>
+                  <div class="bg-white/20 backdrop-blur-md rounded-2xl p-4 text-white text-center mb-4">
+                    <span class="text-xs uppercase tracking-wider bg-white/30 px-2 py-0.5 rounded">Trending</span>
+                    <p class="text-sm font-semibold mt-1">AMOLED & Cyberpunk</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
