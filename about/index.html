@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - AutoWallX</title>
+    <title>About Us - AutoWallX | 4K Wallpapers & Life Progress</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +18,16 @@
         .dot-pattern { background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 24px 24px; }
         .content-overlay { position: relative; z-index: 10; }
         
-        /* Prose Styles for Sub-pages */
-        .prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.875rem; color: #fff; margin-top: 3rem; margin-bottom: 1.25rem; }
-        .prose p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.5rem; }
-        .prose strong { color: #818cf8; font-weight: 700; }
-        .prose a { color: #6366f1; text-decoration: underline; transition: color 0.2s; }
-        .prose a:hover { color: #818cf8; }
+        .prose h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 2.25rem; color: #fff; margin-top: 4rem; margin-bottom: 1.5rem; letter-spacing: -0.025em; }
+        .prose h3 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1.5rem; color: #818cf8; margin-top: 2.5rem; margin-bottom: 1rem; }
+        .prose p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.125rem; }
+        .prose strong { color: #fff; font-weight: 700; }
+        .prose ul { list-style: none; padding: 0; margin-bottom: 2rem; }
+        .prose li { display: flex; gap: 1rem; color: #94a3b8; margin-bottom: 1rem; align-items: flex-start; }
+        .prose li::before { content: "→"; color: #6366f1; font-weight: bold; }
+        
+        .cat-chip { padding: 0.5rem 1.25rem; border-radius: 9999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-size: 0.875rem; font-weight: 600; color: #cbd5e1; transition: all 0.3s; }
+        .cat-chip:hover { background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.4); color: #fff; }
     </style>
 </head>
 <body class="dot-pattern flex flex-col min-h-screen">
@@ -37,7 +41,7 @@
             
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-400">
                 <a href="https://autowallx.in" class="hover:text-white transition-colors">Home</a>
-                <a href="https://autowallx.in/about" class="text-white transition-colors">About Us</a>
+                <a href="https://autowallx.in/about" class="text-white transition-colors border-b-2 border-indigo-500 pb-1">About Us</a>
                 <a href="https://autowallx.in/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="https://autowallx.in/terms-conditions" class="hover:text-white transition-colors">Terms & Conditions</a>
             </nav>
@@ -51,7 +55,7 @@
 
         <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-4 top-20 bg-slate-950 border border-white/10 rounded-[2rem] shadow-2xl z-[90] flex flex-col p-6 space-y-2 overflow-hidden">
             <a href="https://autowallx.in" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">Home</a>
-            <a href="https://autowallx.in/about" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">About Us</a>
+            <a href="https://autowallx.in/about" class="text-lg font-bold text-white px-4 py-3 bg-white/5 rounded-xl transition-all">About Us</a>
             <a href="https://autowallx.in/privacy-policy" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">Privacy Policy</a>
             <a href="https://autowallx.in/terms-conditions" class="text-lg font-bold text-white px-4 py-3 hover:bg-white/5 rounded-xl transition-all">Terms & Conditions</a>
             <div class="pt-4"><a href="https://play.google.com/store/apps/details?id=com.autowallx.wallpapers" class="w-full inline-block text-center px-6 py-4 accent-gradient text-white rounded-xl font-bold text-sm">Download App</a></div>
@@ -59,43 +63,80 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-40 pb-24 px-6 content-overlay">
+    <main class="flex-grow pt-48 pb-24 px-6 content-overlay">
         <div class="max-w-4xl mx-auto">
             
-            <!-- Page Heading -->
-            <div class="mb-16 text-center md:text-left">
-                <h1 class="text-5xl md:text-7xl font-heading font-black leading-tight tracking-tighter mb-6">
-                    About <span class="text-indigo-500">Us</span>
+            <!-- Hero Heading -->
+            <div class="mb-20 text-center md:text-left">
+                <p class="text-indigo-400 font-bold tracking-[0.3em] uppercase text-xs mb-4">Discover the Story</p>
+                <h1 class="text-5xl md:text-8xl font-heading font-black leading-tight tracking-tighter mb-8">
+                    More Than Just <br><span class="text-indigo-500">Wallpapers.</span>
                 </h1>
-                <div class="h-1 w-20 bg-indigo-500 rounded-full mx-auto md:mx-0"></div>
+                <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
+                    AutoWallX is a vision to turn the most looked-at part of your life—your phone screen—into a source of constant inspiration and mindfulness.
+                </p>
             </div>
 
             <!-- Content Card -->
             <div class="glass p-8 md:p-16 rounded-[3rem] border-white/5 prose max-w-none">
-                <p class="text-xl italic mb-8 border-l-4 border-indigo-500 pl-6">
-                    Welcome to <strong>AutoWallX</strong>, your ultimate destination for high-definition 4K wallpapers and intelligent automated screen customization for Android devices.
+                <p class="text-2xl font-medium text-white mb-10 leading-snug">
+                    Welcome to <strong>AutoWallX</strong>, the ultimate personalization hub for Android. We combine elite 4K artistry with intelligent features that respect your time and energy.
                 </p>
 
-                <h2>Our Mission</h2>
+                <h2>The AutoWallX Philosophy</h2>
                 <p>
-                    We believe your smartphone screen should always feel fresh, vibrant, and personalized. Our goal is to provide a seamless platform where you can discover hand-curated artwork and effortlessly schedule automatic wallpaper updates without draining your mobile data or battery.
+                    Most people unlock their phones over 100 times a day. We believe every one of those interactions is an opportunity to be inspired. AutoWallX was built to move beyond static images and bring your background to life with purpose.
                 </p>
 
-                <h2>Why Choose AutoWallX?</h2>
+                <h3>1. Live Life Countdown (Our Signature Feature)</h3>
                 <p>
-                    <strong>Lightning Fast Performance:</strong> We optimize every image using high-speed thumbnail caching so you can browse smoothly.
+                    Visualize your journey with our unique <strong>Progress Tracker</strong>. By entering your birth date and expected lifespan, the app generates a beautiful grid of dots on your wallpaper. Each dot represents a day of your life—reminding you that every single day is an asset to be used wisely.
                 </p>
+
+                <h3>2. Days Challenge Mode</h3>
                 <p>
-                    <strong>Auto Changer:</strong> Set your favorite collections and let the app refresh your home and lock screens automatically.
+                    Whether you're building a new habit (21-Day Challenge) or tracking a 90-day goal, AutoWallX keeps your progress front and center. Your wallpaper updates as you conquer each day, keeping your motivation levels at their peak.
                 </p>
+
+                <h2>Vast 4K Collections</h2>
+                <p>Explore thousands of hand-curated wallpapers across diverse categories, each optimized for modern high-resolution displays:</p>
+                
+                <div class="flex flex-wrap gap-3 mt-4 mb-12">
+                    <span class="cat-chip">AMOLED (True Black)</span>
+                    <span class="cat-chip">Nature & Landscapes</span>
+                    <span class="cat-chip">Minimalist Design</span>
+                    <span class="cat-chip">Abstract Art</span>
+                    <span class="cat-chip">Cars & Automotive</span>
+                    <span class="cat-chip">Anime & Manga</span>
+                    <span class="cat-chip">Animals & Wildlife</span>
+                    <span class="cat-chip">Motivational Quotes</span>
+                    <span class="cat-chip">Classic & Vintage</span>
+                    <span class="cat-chip">Floral & Gardens</span>
+                    <span class="cat-chip">Superheroes (Spiderman & more)</span>
+                    <span class="cat-chip">Sports (CR7 & more)</span>
+                </div>
+
+                <h2>Unmatched Performance</h2>
+                <ul>
+                    <li><strong>Ultra-Fast Browsing:</strong> Our high-speed thumbnail caching system means you never wait for images to load.</li>
+                    <li><strong>Smart Auto-Changer:</strong> Schedule updates for your Home Screen, Lock Screen, or both. Fresh vibes, zero effort.</li>
+                    <li><strong>Battery Optimized:</strong> Designed specifically for Android to ensure that live features and auto-updates consume negligible power.</li>
+                    <li><strong>Full Customization:</strong> Choose from 7+ color presets, adjust opacity, and pick your background type (Solid, System, or Gallery).</li>
+                </ul>
+
+                <h2>Privacy & Integrity</h2>
                 <p>
-                    <strong>Cloud Sync:</strong> Securely sign in to keep your favorite wallpapers synced across all your devices using robust cloud infrastructure.
+                    Your data belongs to you. AutoWallX stores your preferences and countdown data locally on your device. We don't track you, and we don't sell your data. We are here to improve your digital experience, not exploit it.
                 </p>
 
                 <h2>Contact Us</h2>
                 <p>
-                    Have feedback, questions, or suggestions? Reach out anytime at <a href="mailto:autowallx@gmail.com">autowallx@gmail.com</a>.
+                    We'd love to hear how AutoWallX has changed your daily routine. Reach out for support or suggestions:
                 </p>
+                <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                    <a href="mailto:autowallx@gmail.com" class="inline-block px-8 py-4 glass rounded-2xl text-indigo-400 font-bold hover:bg-white/5 transition-all text-center">autowallx@gmail.com</a>
+                    <a href="https://www.instagram.com/autowallx" target="_blank" class="inline-block px-8 py-4 glass rounded-2xl text-pink-400 font-bold hover:bg-white/5 transition-all text-center">Follow on Instagram</a>
+                </div>
             </div>
 
         </div>
@@ -106,10 +147,11 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
             <div class="text-center md:text-left">
                 <a href="https://autowallx.in" class="text-2xl font-heading font-black">AutoWallX</a>
-                <p class="text-[10px] text-slate-600 tracking-[0.3em] uppercase mt-2">Premium Android Personalization</p>
+                <p class="text-[10px] text-slate-600 tracking-[0.3em] uppercase mt-2">Personalize Your Motivation</p>
             </div>
             
             <nav class="flex flex-wrap justify-center gap-8 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                <a href="https://autowallx.in" class="hover:text-white transition-all">Home</a>
                 <a href="https://autowallx.in/about" class="text-white transition-all">About</a>
                 <a href="https://autowallx.in/privacy-policy" class="hover:text-white transition-all">Privacy</a>
                 <a href="https://autowallx.in/terms-conditions" class="hover:text-white transition-all">Terms</a>
