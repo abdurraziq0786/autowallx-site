@@ -17,11 +17,10 @@
         .accent-gradient { background: linear-gradient(135deg, #6366F1 0%, #A855F7 100%); }
         .dot-pattern { background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 24px 24px; }
         
-        /* App Colors */
-        .color-red { color: #FF3B30; }
-        .color-green { color: #00E676; }
-        .color-blue { color: #007AFF; }
-        .color-purple { color: #BF5AF2; }
+        .wallpaper-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; border-radius: 1.5rem; }
+        .wallpaper-card:hover { transform: translateY(-8px) scale(1.02); z-index: 10; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .wallpaper-card img { transition: transform 0.6s ease; width: 100%; height: 100%; object-fit: cover; }
+        .wallpaper-card:hover img { transform: scale(1.1); }
     </style>
 </head>
 <body class="dot-pattern">
@@ -30,8 +29,7 @@
     <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="https://autowallx.in" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <div class="w-8 h-8 accent-gradient rounded-lg flex items-center justify-center shadow-lg"><span class="text-white font-black text-xl">A</span></div>
-                <span class="text-xl font-heading font-extrabold tracking-tight text-white italic">AutoWallX</span>
+                <span class="text-2xl font-heading font-extrabold tracking-tight text-white italic">AutoWallX</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
                 <a href="https://autowallx.in" class="text-white hover:text-indigo-400 transition-colors">Home</a>
@@ -43,37 +41,31 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 px-6">
+    <section class="relative pt-32 pb-16 px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-            
             <div class="flex-1 space-y-8 text-center lg:text-left">
                 <h1 class="text-5xl md:text-7xl font-heading font-black leading-tight tracking-tighter">
-                    Premium <span class="color-blue">4K Wallpapers</span> & <br>
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 text-4xl md:text-6xl">Life Progress Tracker</span>
+                    Elevate Your <span class="text-indigo-500">Screen</span>. <br>
+                    Track Your <span class="text-purple-500">Life</span>.
                 </h1>
-                <p class="text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    AutoWallX isn't just an app—it's a fresh perspective. Get stunning 4K wallpapers that change automatically or visualize your life journey with our unique countdown system.
+                <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    AutoWallX blends stunning 4K photography with a unique motivation tracker. Experience wallpapers that change automatically or visualize your progress daily.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                    <a href="https://play.google.com/store/apps/details?id=com.autowallx.wallpapers" class="px-8 py-4 bg-white text-black rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-xl">Download for Android</a>
-                    <div class="flex items-center gap-2 px-6 py-4 glass rounded-2xl">
-                        <span class="text-white font-bold">⭐ 4.9</span>
-                        <span class="text-slate-500 text-sm">Play Store Rating</span>
-                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.autowallx.wallpapers" class="px-8 py-4 bg-white text-black rounded-2xl font-bold text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all">Install from Play Store</a>
                 </div>
             </div>
-
-            <!-- Smaller Mockup -->
-            <div class="w-full max-w-[300px] relative">
-                <div class="absolute -inset-10 bg-indigo-600/10 blur-[80px] rounded-full"></div>
-                <div class="relative bg-slate-900 rounded-[2.5rem] border-[6px] border-slate-800 aspect-[9/19] overflow-hidden shadow-2xl">
-                    <div class="absolute top-3 left-1/2 -translate-x-1/2 w-12 h-3 bg-black rounded-full z-20"></div>
-                    <div class="h-full w-full bg-black p-4 flex flex-col justify-center items-center space-y-4">
-                        <div class="grid grid-cols-8 gap-1 opacity-60">
-                            <script>for(let i=0; i<40; i++) document.write(`<div class="w-1.5 h-1.5 rounded-full ${i < 18 ? 'bg-indigo-500' : 'bg-slate-800'}"></div>`);</script>
+            
+            <!-- Small Countdown Preview -->
+            <div class="hidden lg:block w-full max-w-[260px] relative">
+                <div class="absolute -inset-10 bg-indigo-600/10 blur-[60px] rounded-full"></div>
+                <div class="glass p-3 rounded-[2.5rem] border-white/10 aspect-[9/18.5]">
+                    <div class="bg-black h-full rounded-[2rem] flex flex-col items-center justify-center p-4 space-y-4">
+                        <div class="grid grid-cols-8 gap-1 opacity-40">
+                            <script>for(let i=0; i<32; i++) document.write(`<div class="w-1.5 h-1.5 rounded-full ${i < 12 ? 'bg-indigo-500 shadow-[0_0_5px_rgba(99,102,241,0.8)]' : 'bg-slate-800'}"></div>`);</script>
                         </div>
                         <div class="text-center">
-                            <span class="text-2xl font-black text-indigo-400">18.2%</span>
+                            <span class="text-xl font-black text-indigo-400">12.5%</span>
                             <p class="text-[8px] text-slate-500 uppercase tracking-widest mt-1">Life Progress</p>
                         </div>
                     </div>
@@ -82,97 +74,86 @@
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories" class="py-24 px-6 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-12 text-center lg:text-left">
-                <h2 class="text-3xl font-heading font-black mb-4">Unlimited 4K Collections</h2>
-                <p class="text-slate-400">Curated wallpapers optimized for every screen.</p>
+    <!-- Premium Wallpaper Gallery Grid -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl md:text-5xl font-heading font-black">Featured Collection</h2>
+                <p class="text-slate-500">Hand-picked 4K wallpapers available in AutoWallX.</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="glass p-6 rounded-3xl group hover:border-indigo-500/50 transition-all">
-                    <h3 class="text-xl font-bold mb-2">AMOLED</h3>
-                    <p class="text-xs text-slate-500">True blacks for battery saving.</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Wallpaper Items -->
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls%201/pink%20flowe%20garden%20(4).jpg" alt="Wallpaper"></div>
+                
+                <!-- Countdown Card Inside Grid -->
+                <div class="wallpaper-card aspect-[9/16] bg-slate-900 border border-indigo-500/30 flex flex-col items-center justify-center p-6 space-y-6">
+                    <div class="grid grid-cols-8 gap-1.5">
+                        <script>for(let i=0; i<48; i++) document.write(`<div class="w-2 h-2 rounded-full ${i < 20 ? 'bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,1)]' : 'bg-slate-800'}"></div>`);</script>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-white font-black text-xl">Live Countdown</h4>
+                        <p class="text-slate-500 text-[10px] uppercase tracking-widest mt-2 leading-relaxed">Visualize your goals <br> directly on your screen</p>
+                    </div>
                 </div>
-                <div class="glass p-6 rounded-3xl group hover:border-purple-500/50 transition-all">
-                    <h3 class="text-xl font-bold mb-2">Nature</h3>
-                    <p class="text-xs text-slate-500">High-res landscapes & vibes.</p>
-                </div>
-                <div class="glass p-6 rounded-3xl group hover:border-red-500/50 transition-all">
-                    <h3 class="text-xl font-bold mb-2">Minimalist</h3>
-                    <p class="text-xs text-slate-500">Clean lines and soft colors.</p>
-                </div>
-                <div class="glass p-6 rounded-3xl group hover:border-green-500/50 transition-all">
-                    <h3 class="text-xl font-bold mb-2">Abstract</h3>
-                    <p class="text-xs text-slate-500">Unique art for your home screen.</p>
-                </div>
+
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls%206/Love%20(242).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls%205/cars%200%20(153).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://pub-477e664c1fca4ab0b79e1dfa71128863.r2.dev/Classic%20(1095).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls/Snow_leopard%20(2).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls%206/Nature%20(104).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls%206/Spiderman%20(75).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls%203/Motivation%20(6).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls/car%20(7).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://pub-477e664c1fca4ab0b79e1dfa71128863.r2.dev/Flower%20(181).jpg" alt="Wallpaper"></div>
+                <div class="wallpaper-card aspect-[9/16]"><img src="https://cdn.autowallx.in/All%20Walls%206/Flower%20(161).jpg" alt="Wallpaper"></div>
             </div>
         </div>
     </section>
 
-    <!-- Setup Guide Section -->
-    <section id="setup" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            
-            <!-- How to: Auto Wallpaper -->
-            <div class="glass p-10 rounded-[3rem] space-y-6">
-                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+    <!-- Setup Guide -->
+    <section id="setup" class="py-24 px-6 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass p-10 rounded-[2.5rem] border-white/5 space-y-6 hover:border-indigo-500/20 transition-all">
+                <div class="w-12 h-12 accent-gradient rounded-xl flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></div>
+                <h3 class="text-2xl font-bold font-heading">Auto Wallpaper Changer</h3>
+                <p class="text-slate-400 text-sm">Keep your screen fresh with automated 4K updates.</p>
+                <div class="space-y-3 text-xs text-slate-500 font-medium">
+                    <div class="flex gap-3"><span>1.</span><span>Go to <b>Settings</b> in the app.</span></div>
+                    <div class="flex gap-3"><span>2.</span><span>Toggle <b>Auto-Changer</b> on.</span></div>
+                    <div class="flex gap-3"><span>3.</span><span>Pick categories and set timer.</span></div>
                 </div>
-                <h3 class="text-2xl font-bold">Auto-Changer Setup</h3>
-                <ul class="space-y-4 text-slate-400 text-sm">
-                    <li class="flex gap-3">
-                        <span class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-white shrink-0">1</span>
-                        <span>Open <b>Settings</b> inside the app.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-white shrink-0">2</span>
-                        <span>Enable the <b>Auto-Changer</b> toggle.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-white shrink-0">3</span>
-                        <span>Select your favorite categories and update interval.</span>
-                    </li>
-                </ul>
             </div>
 
-            <!-- How to: Countdown -->
-            <div class="glass p-10 rounded-[3rem] space-y-6 border-indigo-500/20">
-                <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div class="glass p-10 rounded-[2.5rem] border-white/5 space-y-6 hover:border-purple-500/20 transition-all">
+                <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                <h3 class="text-2xl font-bold font-heading">Live Countdown Wallpapers</h3>
+                <p class="text-slate-400 text-sm">Visualize your life or challenges on your screen.</p>
+                <div class="space-y-3 text-xs text-slate-500 font-medium">
+                    <div class="flex gap-3"><span>1.</span><span>Select <b>Live Life</b> from Home.</span></div>
+                    <div class="flex gap-3"><span>2.</span><span>Set <b>DOB</b> or <b>Target Days</b>.</span></div>
+                    <div class="flex gap-3"><span>3.</span><span>Customize colors and hit <b>Apply</b>.</span></div>
                 </div>
-                <h3 class="text-2xl font-bold">Live Countdown Setup</h3>
-                <ul class="space-y-4 text-slate-400 text-sm">
-                    <li class="flex gap-3">
-                        <span class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-white shrink-0">1</span>
-                        <span>Click the <b>Live Life</b> icon on the Home screen.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-white shrink-0">2</span>
-                        <span>Enter your <b>DOB</b> or <b>Target Days</b> challenge.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-white shrink-0">3</span>
-                        <span>Pick your color (Red, Green, Blue, etc.) and hit <b>Apply</b>.</span>
-                    </li>
-                </ul>
             </div>
-
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <a href="https://autowallx.in" class="text-xl font-heading font-black italic hover:text-indigo-400 transition-colors">AutoWallX</a>
+    <footer class="py-12 px-6 border-t border-white/5 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="space-y-2 text-center md:text-left">
+                <span class="text-xl font-heading font-black italic">AutoWallX</span>
+                <p class="text-[10px] text-slate-600 tracking-[0.2em] uppercase">Premium Android Experience</p>
             </div>
-            <p class="text-xs text-slate-600 tracking-widest uppercase">© 2026 AutoWallX. All Rights Reserved.</p>
-            <div class="flex gap-6 text-sm text-slate-400">
+            
+            <nav class="flex gap-8 text-xs font-bold text-slate-500 uppercase tracking-widest">
                 <a href="https://autowallx.in/about" class="hover:text-white transition-colors">About</a>
                 <a href="https://autowallx.in/privacy-policy" class="hover:text-white transition-colors">Privacy</a>
                 <a href="https://autowallx.in/terms-conditions" class="hover:text-white transition-colors">Terms</a>
-            </div>
+                <a href="mailto:autowallx@gmail.com" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+            
+            <p class="text-[10px] text-slate-700">© 2026 AUTOWALLX. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
